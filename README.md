@@ -25,6 +25,7 @@ This project was developed using the following technologies:
 - [NextJS](https://nextjs.org/)
 - [Firebase](https://firebase.google.com/)
 - [TailwindCSS](https://tailwindcss.com/)
+- [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
 - [Lucide Icons](https://lucide.dev/)
 
 ## 🚀 Getting started
