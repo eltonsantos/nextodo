@@ -3,6 +3,7 @@
 import { addTask } from "@/lib/firebase";
 import { CirclePlus } from "lucide-react";
 import { useState } from "react";
+import Loading from "./Loading";
 
 interface InputProps {
   onTaskAdded: () => void;
@@ -40,14 +41,16 @@ export default function Input({ onTaskAdded }: InputProps) {
         onKeyUp={(e) => e.key === 'Enter' && handleSubmit()}
       />
       <button
-        className="flex gap-2 items-center p-4 rounded-md bg-blue-400 text-white text-sm hover:bg-blue-500 transition-colors"
+        className="flex gap-2 items-center justify-center p-4 rounded-md bg-blue-400 text-white text-sm hover:bg-blue-500 transition-colors lg:min-w-[100px] w-[65px] sm:w-auto"
         onClick={handleSubmit}
         disabled={isLoading || !title.trim()}
       >
-        {isLoading ? "Criando..." : "Criar"}
-        <span className="hidden sm:inline-block lg:inline-block xl:inline-block md:inline-block 2xl:inline-block">
-          <CirclePlus />
-        </span>
+        {isLoading ? <Loading /> : "Criar"}
+        {!isLoading && (
+          <span className="hidden sm:inline-block lg:inline-block xl:inline-block md:inline-block 2xl:inline-block">
+            <CirclePlus />
+          </span>
+        )}
       </button>
     </div>
   );
