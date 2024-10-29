@@ -117,18 +117,20 @@ export default function List({ refreshTrigger }: ListProps) {
                     className="flex-1 bg-gray-600 text-white rounded p-4"
                     onKeyUp={(e) => e.key === 'Enter' && handleEdit(task.id)}
                   />
-                  <button
-                    onClick={() => handleEdit(task.id)}
-                    className="text-green-500 hover:text-green-400"
-                  >
-                    Salvar
-                  </button>
-                  <button
-                    onClick={() => setEditingTask(null)}
-                    className="text-gray-500 hover:text-gray-400"
-                  >
-                    Cancelar
-                  </button>
+                  <div className="flex gap-2 sm:flex-row flex-col">
+                    <button
+                      onClick={() => handleEdit(task.id)}
+                      className="text-green-500 hover:text-green-400"
+                    >
+                      Salvar
+                    </button>
+                    <button
+                      onClick={() => setEditingTask(null)}
+                      className="text-gray-500 hover:text-gray-400"
+                    >
+                      Cancelar
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <div key={task.id} className="flex justify-between p-4 bg-gray-700 rounded-lg">

@@ -45,7 +45,9 @@ export default function Input({ onTaskAdded }: InputProps) {
         disabled={isLoading || !title.trim()}
       >
         {isLoading ? "Criando..." : "Criar"}
-        <CirclePlus />
+        <span className="hidden sm:inline-block lg:inline-block xl:inline-block md:inline-block 2xl:inline-block">
+          <CirclePlus />
+        </span>
       </button>
     </div>
   );
